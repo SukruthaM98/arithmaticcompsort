@@ -43,3 +43,13 @@ do
 	count=$(( $count+1 ))
 done
 echo " array values are:" ${array[@]}
+
+#sorting values in descending order
+
+sort=`echo ${array[@]} | awk 'BEGIN{RS=" ";} {print $1}' | sort -n`
+i=0
+for values in $sort
+do
+sortedarray[((i++))]="$values"
+done
+echo "sorted values of random numbers are:" ${array[@]}
