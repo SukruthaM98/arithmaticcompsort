@@ -9,3 +9,8 @@ echo " numbers entered by user are:" $a $b $c
 
 computation1=$(( $a+$b*$c ))
 echo "first computation is:" $computation1
+
+#second computation
+
+computation2=$(( $a*$b+$c ))
+echo "second computation is:" $computation2
