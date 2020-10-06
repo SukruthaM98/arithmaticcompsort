@@ -46,10 +46,20 @@ echo " array values are:" ${array[@]}
 
 #sorting values in descending order
 
-sort=`echo ${array[@]} | awk 'BEGIN{RS=" ";} {print $1}' | sort -n`
-i=0
+sort=`echo ${array[@]} | awk 'BEGIN{RS=" ";} {print $1}' | sort -n -r`
+counter=0
 for values in $sort
 do
-sortedarray[((i++))]="$values"
+sortedarray[((counter++))]="$values"
 done
-echo "sorted values of random numbers are:" ${array[@]}
+echo "sorted array in descending order are:" ${sortedarray[@]}
+
+#sorting values in ascending order
+ascendingsort=`echo ${array[@]} | awk 'BEGIN{RS=" ";} {print $1}' | sort -n `
+counter1=0
+for value in $ascendingsort
+do
+arrayofascending[((counter1++))]="$value"
+done
+echo "sorted array in ascending order are:" ${arrayofascending[@]}
+
